@@ -1,0 +1,24 @@
+{
+  "name": "brandon-cooke-latex-resume",
+  "version": "1.0.0",
+  "description": "[![Brandon_Cooke_Resume_V1.3-1.jpg](https://s25.postimg.cc/gvs2666mn/Brandon_Cooke_Resume_V1.3-1.jpg)](https://postimg.cc/image/bkd5lgkjv/)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrandonCookeDev/brandon-cooke-LaTeX-resume.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrandonCookeDev/brandon-cooke-LaTeX-resume/issues"
+  },
+  "homepage": "https://github.com/BrandonCookeDev/brandon-cooke-LaTeX-resume#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "latex": "0.0.1",
+    "pdf-to-png": "^1.0.3"
+  }
+}
