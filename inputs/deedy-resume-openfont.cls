@@ -42,7 +42,7 @@ Last Updated on
 
 % Name command
 \newcommand{\namesection}[3]{
-	\centering{LaTeX
+	\centering{
 		\sffamily
 		\fontspec[Path = /Users/brandoncooke/Documents/Workspace/brandon-cooke-LaTeX-resume/fonts/lato/]{Lato-Hai}\fontsize{40pt}{10cm}\selectfont #1 
 		\fontspec[Path = /Users/brandoncooke/Documents/Workspace/brandon-cooke-LaTeX-resume/fonts/lato/]{Lato-Lig}\selectfont #2
