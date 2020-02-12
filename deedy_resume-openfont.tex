@@ -133,27 +133,28 @@ Distributed Systems
 \subsection{Programming}
 
 \location{Over 5000 lines:}
-NodeJS \textbullet{} Python \textbullet{} C\# \textbullet{} Java \textbullet{} SQL \\
-JavaScript \textbullet{} TypeScript \textbullet{} PowerShell \\
+NodeJS \textbullet{} TypeScript \textbullet{}  Python \\
+C\# \textbullet{} Java \textbullet{} PowerShell \textbullet{} SQL \\
 
 \location{Over 1000 lines:}
-C \textbullet{} ReactJS \textbullet{} AngularJS  \\
-Batch \textbullet{} Bash \textbullet{} JQuery \\
+C \textbullet{} C++ \textbullet{} Bash   \\
+ReactJS \textbullet{} AngularJS \textbullet{} JQuery \\
+
+\location{DevOps:}
+Docker \textbullet{} Azure DevOps \textbullet{} Terraform \\
+Ansible \textbullet{} AWS Cloudformation \\
 
 \location{AWS: }
-Lambda \textbullet{} DynamoDB \textbullet{} API Gateway  \\
-Cloudformation \textbullet{} EMR \textbullet{} S3 \\
-Elastic Beanstalk \textbullet{} Redis \textbullet{} Kinesis \\
+ECS \textbullet{} Lambda \textbullet{} DynamoDB  \\
+EMR \textbullet{} S3 \textbullet{} CloudWatch \\
+Elastic Beanstalk \textbullet{} Elasticache  \\
+SNS/SQS \textbullet{} Route53 \textbullet{} Kinesis \\
+Application Load Balancing \\
 
-\location{Familiar:}
-PHP \textbullet{} C++ \textbullet{} Android \textbullet{} VueJS \\
-Redux \textbullet{} VBScript \textbullet{} HIVE \\
 \location{Other:}
-Docker \textbullet{} MEAN \textbullet{} Firebase \textbullet{} git/svn \\
-Wireshark \textbullet{} Fiddler \textbullet{} JMeter \\
-Maven \textbullet{} Mininet SDN \textbullet{} OpenCV \\
-WCF.NET \textbullet{} ASMX.NET \\
-Spring \textbullet{} Flask \textbullet{} Jersey \textbullet{} Express
+Redux \textbullet{} HIVE  \textbullet{} PHP \\
+Flask \textbullet{} Express \textbullet{} OpenCV \\
+
 
 \sectionsep
 
@@ -173,9 +174,24 @@ Spring \textbullet{} Flask \textbullet{} Jersey \textbullet{} Express
 
 \section{Experience}
 
+\runsubsection{RESICAP}
+\descript{| Lead DevOps Engineer }
+\location{March 2019 - Present | Atlanta, Georgia}
+\vspace{\topsep} % Hacky fix for awkward extra vertical space
+\begin{tightemize}
+\item Architected and built RESICAP's Cloud API and FaaS-driven systems via ECS, Lambda, Aurora, S3, and EB.
+\item Created standard Dockerization process for applications.
+\item Spearheaded creation of CICD Build and Release pipelines, documentation, variable libraries, and custom scripts and tasks in Azure DevOps.
+\item Created custom Infrastructure as Code using the AWS CDK and TypeScript.
+\item Implemented .NET XUnit unit tests to cover previously uncovered applications, and put in place automated testing steps in CICD pipelines.
+\item Created .NET Core libraries for dev team to expedite common DevOps code added to all projects in RESICAP
+\end{tightemize}
+
+\sectionsep
+
 \runsubsection{ENGAGE.cx}
 \descript{| Senior Developer }
-\location{February 2017 - Present | Atlanta, Georgia}
+\location{February 2017 - March 2019 | Atlanta, Georgia}
 \vspace{\topsep} % Hacky fix for awkward extra vertical space
 \begin{tightemize}
 \item Created an analytics aggregating program using AWS EMR, Athena, Lambda, Hadoop, HIVE, Sqoop, and NodeJS  saving roughly 100\% in ETL costs.
@@ -194,23 +210,17 @@ Spring \textbullet{} Flask \textbullet{} Jersey \textbullet{} Express
 \item Acted as Lead Developer for R3’s DOME .NET web service, a tool used to provide and display data for multiple departments inside AT\&T. Implemented C\#, MSSQL, and Kapow Screen Scraping.
 \item Enhanced R3's PVC Disconnect tool using NodeJS and MongoDB.
 \item Utilized JavaScript to enhance PAL-ABS automated Router config generator.
-\item Enhanced AT\&T's key POS app, OPUS, using Java, Maven, and Struts MVC.
 \item Created an Angular, Jersey, MySQL webapp that enabled Flex Force leadership to track employee individual contributions.
-\item Participated in CELL classes to learn Big Data, SDN, and AngularJS.
 \item Acted as a mentor to a group of 4 interns during Summer 2016.
-\item Ideated and pitched "It Can Wait: Incentivised Program" to a Senior Executive.
 \end{tightemize}
 \sectionsep
 
 \runsubsection{Travelport}
 \descript{| Software Developer Intern }
 \location{May 2013 – May 2014 | Atlanta, Georgia}
-\begin{tightemize}
-\item Constructed automation script to enhance Travelport's SCM process deploy and fallback multiple applications concurrently using MS Powershell, JavaScript, VBScript, and BATCH.
-\item Enabled critical data communication between Enterprise Architecture and Sparx System Enterprise Architecture app using C\# and WCF.
-\item Enhanced Travelport's Universal Desktop with plugins using C\#, WPF, and MVVM.
-\end{tightemize}
+
 \sectionsep
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %     RESEARCH
@@ -221,12 +231,9 @@ Spring \textbullet{} Flask \textbullet{} Jersey \textbullet{} Express
 \location{| Atlanta, Georgia}
 \begin{tightemize} 
 \item Lead a development team employing Docker, Docker-Compose, Python, Flask, MySQL, and Bootstrap to construct "CorkBoardIt!", a small, Pintrest type fullstack website. 
-\item Created \href{http://npmjs.com/package/smashgg.js}{\custombold{smashgg.js}}, a comprehensive NodeJS SDK for \href{www.smash.gg}{\custombold{Smash.GG's}} public API. 
-\item Completly refactored {\custombold{smashgg.js}} into TypeScript.
+\item Used TypeScript to create  \href{http://npmjs.com/package/smashgg.js}{\custombold{smashgg.js}}, a comprehensive NodeJS SDK for \href{www.smash.gg}{\custombold{Smash.GG's}} public API.
 \item Used Python, AngularJS, and MongoDB to construct an automated esports ranking app, \href{https://notgarpr.com}{\custombold{NotGarPR}}.
 \item Used Python and OpenCV to construct a pattern matching AI program.
-\item Used C to create OS components such as a CPU scheduler and multilevel cache.
-\item Helped develop \href{https://play.google.com/store/apps/details?id=com.gmail.japa.arialdis.tasteslikechickenlite\&hl=en}{\custombold{Tastes Like Chicken}}, a lightweight restaurant discovery and rating applicaiton using Java for Android.
 \end{tightemize}
 \sectionsep
 
