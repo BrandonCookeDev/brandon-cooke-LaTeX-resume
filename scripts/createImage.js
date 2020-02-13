@@ -16,16 +16,17 @@ const IMAGE_FILENAME = 'BrandonCookeResume.png';
 const README_FILENAME = 'README.md';
 
 /** PATH VARIABLES **/
-const PDF_FILEPATH = path.join(__dirname, '..', PDF_FILENAME);
-const LATEX_FILEPATH = path.join(__dirname, '..', LATEX_FILENAME);
-const LATEX_CLS_FILEPATH = path.join(__dirname, '..', LATEX_CLS_FILENAME);
-const IMAGE_FILEPATH = path.join(__dirname, '..', IMAGE_FILENAME);
-const README_FILEPATH = path.join(__dirname, '..', README_FILENAME);
+const ROOT_DIR = path.join(__dirname, '..');
+const SRC_DIR = path.join(ROOT_DIR, 'src');
+const PDF_FILEPATH = path.join(ROOT_DIR, PDF_FILENAME);
+const LATEX_FILEPATH = path.join(SRC_DIR, LATEX_FILENAME);
+const LATEX_CLS_FILEPATH = path.join(SRC_DIR, LATEX_CLS_FILENAME);
+const IMAGE_FILEPATH = path.join(ROOT_DIR, IMAGE_FILENAME);
+const README_FILEPATH = path.join(ROOT_DIR, README_FILENAME);
 
 const CMD = 'xelatex';
-const ROOT = path.join(__dirname, '..');
-const FONTS_DIR = path.join(ROOT, 'fonts');
-const INPUTS_DIR = path.join(ROOT, 'inputs');
+const FONTS_DIR = path.join(SRC_DIR, 'fonts');
+const INPUTS_DIR = path.join(SRC_DIR, 'inputs');
 
 let files = {};
 
@@ -84,7 +85,7 @@ async function convertPdfToPng(){
 }
 
 function formatClsFile(){
-	let clsSkeletonFilepath = path.join(ROOT, 'deedy-resume-openfont.skeleton.cls');
+	let clsSkeletonFilepath = path.join(SRC_DIR, 'deedy-resume-openfont.skeleton.cls');
 	let clsSkeletonFileContent = fs.readFileSync(clsSkeletonFilepath, 'utf8');
 	let clsFilepath = path.join(INPUTS_DIR, 'deedy-resume-openfont.cls');
 
