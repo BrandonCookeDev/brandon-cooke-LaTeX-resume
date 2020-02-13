@@ -4,4 +4,5 @@ WORKDIR /app/current
 COPY . .
 RUN npm install
 
-ENTRYPOINT npm run generate
+# ENTRYPOINT npm run generate
+CMD ["npm", "run", "generate"]
