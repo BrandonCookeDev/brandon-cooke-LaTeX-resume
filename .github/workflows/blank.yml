@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@BrandonCookeDev-patch-1
+    - uses: actions/checkout@master
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
