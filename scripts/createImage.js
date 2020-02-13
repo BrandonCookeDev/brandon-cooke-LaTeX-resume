@@ -44,6 +44,7 @@ function writeStreamError(e){
 
 async function convertPdfToPng(){
 	stopCalculateFile(PDF_FILEPATH);
+	printFilesize(PDF_FILEPATH);
 	startCalculateFile(IMAGE_FILEPATH);
 	try{
 		console.log(chalk.blue(`latex converted to pdf successfully. File at: ${chalk.magenta(PDF_FILEPATH)}`));
@@ -92,6 +93,12 @@ function formatClsFile(){
 	}
 	let merged = handlebars.compile(clsSkeletonFileContent)(params);
 	fs.writeFileSync(clsFilepath, merged, 'utf8');
+}
+
+function printFilesize(filepath){
+	let size = fs.statSync(filepath).size;
+	let bytes = pbytes(size);
+	console.log(chalk.green(`${filepath}... ${bytes} (${size})`));
 }
 
 function getFilesize(filepath){

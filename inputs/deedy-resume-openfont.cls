@@ -26,16 +26,16 @@
 
 % Set main fonts
 \defaultfontfeatures{Mapping=tex-text}
-\setmainfont[Color=primary, Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/lato/]{Lato-Lig}
-\setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/raleway/]{Raleway-ExtraLight}
-\newcommand{\custombold}[1]{\color{subheadings}\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/lato/]{Lato-Reg}\selectfont #1 \normalfont}
+\setmainfont[Color=primary, Path = /app/current/fonts/lato/]{Lato-Lig}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = /app/current/fonts/raleway/]{Raleway-ExtraLight}
+\newcommand{\custombold}[1]{\color{subheadings}\fontspec[Path = /app/current/fonts/lato/]{Lato-Reg}\selectfont #1 \normalfont}
 
 % Date command
 \setlength{\TPHorizModule}{1mm}
 \setlength{\TPVertModule}{1mm}
 \textblockorigin{0mm}{5mm} % start everyth
 \newcommand{\lastupdated}{\begin{textblock}{60}(165,0)
-\color{date}\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont 
+\color{date}\fontspec[Path = /app/current/fonts/raleway/]{Raleway-ExtraLight}\fontsize{8pt}{10pt}\selectfont 
 Last Updated on
 \today
 \end{textblock}}
@@ -44,11 +44,11 @@ Last Updated on
 \newcommand{\namesection}[3]{
 	\centering{
 		\sffamily
-		\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/lato/]{Lato-Hai}\fontsize{40pt}{10cm}\selectfont #1 
-		\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/lato/]{Lato-Lig}\selectfont #2
+		\fontspec[Path = /app/current/fonts/lato/]{Lato-Hai}\fontsize{40pt}{10cm}\selectfont #1 
+		\fontspec[Path = /app/current/fonts/lato/]{Lato-Lig}\selectfont #2
 	} \\
 	\vspace{5pt}
-	\centering{ \color{headings}\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3}
+	\centering{ \color{headings}\fontspec[Path = /app/current/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{14pt}\selectfont #3}
 	\noindent\makebox[\linewidth]{\rule{\paperwidth}{0.4pt}}
 	\vspace{-15pt}
 }
@@ -56,21 +56,21 @@ Last Updated on
 
 % Headings command
 \titleformat{\section}{\color{headings}
-\scshape\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{} {0em}{}
+\scshape\fontspec[Path = /app/current/fonts/lato/]{Lato-Lig}\fontsize{16pt}{24pt}\selectfont \raggedright\uppercase}{} {0em}{}
 
 % Subeadings command
 \titleformat{\subsection}{\color{subheadings}
-\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
+\fontspec[Path = /app/current/fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase}{}{0em}{}
 \titlespacing{\subsection}{0pt}{\parskip}{-\parskip}
 \titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
 \newcommand{\runsubsection}[1]{\color{subheadings}
-\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
+\fontspec[Path = /app/current/fonts/lato/]{Lato-Bol}\fontsize{12pt}{12pt}\selectfont\bfseries\uppercase {#1} \normalfont}
 
 % Descriptors command
-\newcommand{\descript}[1]{\color{subheadings}\raggedright\scshape\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
+\newcommand{\descript}[1]{\color{subheadings}\raggedright\scshape\fontspec[Path = /app/current/fonts/raleway/]{Raleway-Medium}\fontsize{11pt}{13pt}\selectfont {#1 \\} \normalfont}
 
 % Location command
-\newcommand{\location}[1]{\color{headings}\raggedright\fontspec[Path = /Users/bcooke/Documents/workspace/projects/brandon-cooke-LaTeX-resume/fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
+\newcommand{\location}[1]{\color{headings}\raggedright\fontspec[Path = /app/current/fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont {#1\\} \normalfont}
 
 % Section seperators command
 \newcommand{\sectionsep}[0]{\vspace{8pt}}
