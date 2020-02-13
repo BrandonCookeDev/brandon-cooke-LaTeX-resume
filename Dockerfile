@@ -17,8 +17,8 @@ RUN wget http://www.imagemagick.org/download/ImageMagick.tar.gz && \
 	make install && \
 	ldconfig /usr/local/lib
 
-COPY . /app/current
 WORKDIR /app/current
+COPY . .
 RUN npm install
 
 ENTRYPOINT npm run generate
