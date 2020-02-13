@@ -1,8 +1,8 @@
 'use strict';
+require('colors')
 
 const fs = require('fs');
 const path = require('path');
-const chalk = require('chalk');
 const latex = require('node-latex');
 const pbytes = require('pretty-bytes');
 const PDFImage = require("pdf-image").PDFImage;
@@ -48,9 +48,9 @@ async function convertPdfToPng(){
 	printFilesize(PDF_FILEPATH);
 	startCalculateFile(IMAGE_FILEPATH);
 	try{
-		console.log(chalk.blue(`latex converted to pdf successfully. File at: ${chalk.magenta(PDF_FILEPATH)}`));
+		console.log(`latex converted to pdf successfully. File at: ${PDF_FILEPATH.magenta}`.blue);
 		
-		console.log(chalk.blue(`converting pdf to png at ${IMAGE_FILEPATH}`));
+		console.log(`converting pdf to png at ${IMAGE_FILEPATH}`.blue);
 		/*
 		pdfToPng({
 			input: PDF_FILEPATH,
@@ -69,13 +69,13 @@ async function convertPdfToPng(){
 		});
 		await pdfImage.convertFile();
 		
-		console.log(chalk.blue(`completed converting pdf into png! File at: ${chalk.magenta(IMAGE_FILEPATH)}`));
-		console.log(chalk.green(`LaTeX to PNG conversion complete! Adding image to README`));
+		console.log(`completed converting pdf into png! File at: ${(IMAGE_FILEPATH.magenta)}`.blue);
+		console.log(`LaTeX to PNG conversion complete! Adding image to README`.green);
 
 		let imageReadmeContent = `![Brandon Cooke, Software Developer](./${IMAGE_FILENAME})`;
 		fs.writeFileSync(README_FILEPATH, imageReadmeContent);
 
-		console.log(chalk.green(`README content written! (${chalk.magenta(imageReadmeContent)})`))
+		console.log(`README content written! (${imageReadmeContent.magenta})`.green)
 		stopCalculateFile(IMAGE_FILEPATH);
 		process.exit(0);
 	} catch(e){
@@ -99,13 +99,13 @@ function formatClsFile(){
 function printFilesize(filepath){
 	let size = fs.statSync(filepath).size;
 	let bytes = pbytes(size);
-	console.log(chalk.green(`${filepath}... ${bytes} (${size})`));
+	console.log(`${filepath}... ${bytes} (${size})`.green);
 }
 
 function getFilesize(filepath){
 	let size = fs.statSync(filepath).size;
 	let bytes = pbytes(size);
-	console.log(chalk.blue(`writing to ${filepath}... ${bytes} (${size})`));
+	console.log(`writing to ${filepath}... ${bytes} (${size})`.blue);
 }
 function startCalculateFile(filepath){
 	files[filepath] = setInterval(() => getFilesize(filepath), 500)
@@ -118,7 +118,7 @@ function stopCalculateFile(filepath){
 
 /** MAIN **/
 try{
-	console.log(chalk.green('Beginning conversion of LaTeX to PNG...'));
+	console.log('Beginning conversion of LaTeX to PNG...'.green);
 	let pdfWriteStream = fs.createWriteStream(PDF_FILEPATH);
 
 	pdfWriteStream.on('error', writeStreamError);
@@ -131,17 +131,17 @@ try{
 		}
 	})
 
-	console.log(chalk.blue(`formatting Cls file with fonts filepath`));
+	console.log(`formatting Cls file with fonts filepath`.blue);
 	formatClsFile();
-	console.log(chalk.green(`formatted Cls file!`));
+	console.log(`formatted Cls file!`.green);
 
-	console.log(chalk.blue(`Fonts: ${chalk.yellow(FONTS_DIR)}`));
-	console.log(chalk.blue(`Inputs: ${chalk.yellow(path.join(__dirname, '..'))}`));
+	console.log(`Fonts: ${FONTS_DIR.yellow}`.blue);
+	console.log(`Inputs: ${path.join(__dirname, '..').yellow}`.blue);
 
 
 	let latexContentReadStream = fs.createReadStream(LATEX_FILEPATH, 'utf8');
-	console.log(chalk.blue(`collected latex content from file: ${chalk.magenta(LATEX_FILEPATH)}`));
-	console.log(chalk.blue(`converting to PDF...`));
+	console.log(`collected latex content from file: ${LATEX_FILEPATH.magenta}`.blue);
+	console.log(`converting to PDF...`.blue);
 
 	let pdfContent = latex(latexContentReadStream, {
 		fonts: FONTS_DIR,
@@ -149,7 +149,7 @@ try{
 		cmd: CMD
 	});
 
-	console.log(chalk.blue(`PDF Content: ${chalk.magenta(JSON.stringify(pdfContent))}`));
+	console.log(`PDF Content: ${JSON.stringify(pdfContent).magenta}`.blue);
 	pdfContent.pipe(pdfWriteStream);
 	pdfContent.on('error', function(e){
 		console.error('Error writing to %s: %s', PDF_FILEPATH, e);
