@@ -8,16 +8,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
+    - uses: actions/checkout@BrandonCookeDev-patch-1
+    - name: Commit files
       run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-    - name: Run git update script
-      run: ./scripts/pushToGit.sh
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Add changes" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Run Docker process
       run: ./scripts/docker.sh
-    - name: Run git update script
-      run: ./scripts/pushToGit.sh
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
