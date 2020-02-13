@@ -15,5 +15,9 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
+    - name: Run git update script
+      run: ./scripts/pushToGit.sh
     - name: Run Docker process
       run: ./scripts/docker.sh
+    - name: Run git update script
+      run: ./scripts/pushToGit.sh
