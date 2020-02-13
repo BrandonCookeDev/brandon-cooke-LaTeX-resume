@@ -7,5 +7,5 @@ cd $BASEDIR
 docker build -t $IMAGE_NAME .
 docker run \
 	--mount type=bind,source=$(pwd)/,target=/app/current \
-	-it $IMAGE_NAME
+	$IMAGE_NAME
 cd $CURDIR
