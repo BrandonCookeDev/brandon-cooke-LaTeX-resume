@@ -10,7 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Run Docker process
-      run: ./scripts/docker.sh
+      run: ./scripts/docker.sh      
+    - name: Run Docker process
+      run: ./scripts/docker.run.sh
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
