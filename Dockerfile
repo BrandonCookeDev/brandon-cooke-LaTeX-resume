@@ -1,4 +1,4 @@
-FROM bcooke91/node-imagemagik:12
+FROM docker.pkg.github.com/brandoncookedev/docker-node-imagemagik/node-imagemagik:latest
 
 WORKDIR /app
 COPY . .
