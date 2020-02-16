@@ -1,6 +1,5 @@
 FROM bcooke91/node-imagemagik:12
 
-WORKDIR /app/current
 COPY . .
 RUN npm install
 
