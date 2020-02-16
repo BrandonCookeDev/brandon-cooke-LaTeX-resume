@@ -13,12 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Build Docker image
-      run: ./scripts/docker.sh      
-    - name: Run Docker image
-      run: |
-        docker images
-        docker run \
-          --mount type=bind,source=$(pwd)/,target=/ $DOCKER_IMAGE_NAME
+      run: ./scripts/docker.sh
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
