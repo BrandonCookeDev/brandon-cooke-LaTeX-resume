@@ -12,14 +12,20 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    
+    - name: Log into docker registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+      
     - name: Build Docker image
       run: ./scripts/docker.sh
+      
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git status
         git commit -m "Add changes" -a
+        
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
