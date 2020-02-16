@@ -1,0 +1,38 @@
+name: CI
+
+on: [push]
+
+env: 
+  DOCKER_IMAGE_NAME: resume-latext
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@master
+      
+    - name: NPM Install
+      run: npm install
+    
+    - name: Log into docker registry
+      run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+      
+    - name: Build Docker image
+      run: ./scripts/docker.sh
+      
+    - name: Commit files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git pull
+        git status
+        git add .
+        git commit -m "Add changes" 
+        
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        branch: ${{ github.ref }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
