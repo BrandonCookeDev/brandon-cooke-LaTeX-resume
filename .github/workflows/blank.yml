@@ -2,6 +2,9 @@ name: CI
 
 on: [push]
 
+env: 
+  DOCKER_IMAGE_NAME: resume-latext
+
 jobs:
   build:
 
@@ -9,10 +12,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: Run Docker process
+    - name: Build Docker image
       run: ./scripts/docker.sh      
-    - name: Run Docker process
-      run: ./scripts/docker.run.sh
+    - name: Run Docker image
+      run: |
+        docker run \
+          --mount type=bind,source=$(pwd)/,target=/app/current $DOCKER_IMAGE_NAME
     - name: Commit files
       run: |
         git config --local user.email "action@github.com"
